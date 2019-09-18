@@ -73,3 +73,4 @@ for o in oer:
         saveTriple(SUBJECT, PREDICATE, OBJECT, objPageOer)
 
     break
+g
