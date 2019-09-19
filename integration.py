@@ -1,15 +1,13 @@
-from _curses import savetty
-
 import mysql.connector
 
-mydb=mysql.connector.connect(
+mydb = mysql.connector.connect(
     host="localhost",
     user="root",
     passwd="",
     database="scrapydb"
-    )
+)
 
-myac=mydb.cursor()
+myac = mydb.cursor()
 
 source = 'Merlot'
 
@@ -20,8 +18,8 @@ def getUrlOpenCulture(lstDownloads):
             return download
     return None
 
-def saveTriple(s,sa,p,o,repository):
-    if  o == 'None' or o == '' or o == None:
+def saveTriple(s, sa, p, o, repository):
+    if o == 'None' or o == '' or o == None:
         pass
     else:
         sql = "INSERT INTO scrapydb.cleantriple(subject, subject_alternative, predicate, object,repository) VALUES(%s,%s,%s,%s,%s)"
@@ -30,9 +28,15 @@ def saveTriple(s,sa,p,o,repository):
         mydb.commit()
 
 
+<<<<<<< HEAD
 #------------------- TO get Row from DB ---------------------
 #Los predicados son las columnas de la tabla OER
 myac.execute('desc merlot')
+=======
+# ------------------- TO get Row from DB ---------------------
+# Los predicados son las columnas de la tabla OER
+myac.execute('desc oer')
+>>>>>>> c2e31550fb680944e4f6c3e5c88e581e64deae4a
 predicates = myac.fetchall()
 
 #query = 'select * from oer o join oer_pages op on o.pages_id = op.id where op.name = "{}";'.format(source)
@@ -45,6 +49,7 @@ for o in oer:
     idOer = o[0]
     SUBJECT = o[2]
 
+<<<<<<< HEAD
     #Descargas
     '''
     query = 'select od.name, od.url from oer_downloads od join oer o on od.oer_id = o.id where o.id ={};'.format(idOer)
@@ -68,6 +73,13 @@ for o in oer:
     '''
 
     saveTriple(SUBJECT,subject_aux,'repository_oer',source,source)
+=======
+    # Definiendo el sujeto
+    idOer = o[0]
+    SUBJECT = o[8]
+    subject_aux = '{0}-{1}'.format(source.replace(' ', ''), idOer)
+    saveTriple(SUBJECT, subject_aux, 'repository_oer', source, source)
+>>>>>>> c2e31550fb680944e4f6c3e5c88e581e64deae4a
 
     
     # Valores de Llaves Foraneas
@@ -85,7 +97,10 @@ for o in oer:
     objTypeOer = myac.fetchall()
     objTypeOer = objTypeOer[0][0]
     saveTriple(SUBJECT, subject_aux, 'type_oer', objTypeOer, source)
+<<<<<<< HEAD
     '''
+=======
+>>>>>>> c2e31550fb680944e4f6c3e5c88e581e64deae4a
 
     for p in predicates:
         '''
@@ -93,10 +108,11 @@ for o in oer:
         if idxPredicate == 10 or idxPredicate == 11 or idxPredicate == 12:
             pass
         else:
-            #recorriendo todos las columnas de la tabla para un OER"
+            # recorriendo todos las columnas de la tabla para un OER"
             PREDICATE = p[0]
             OBJECT = str(o[idxPredicate]).strip()
             saveTriple(SUBJECT, subject_aux, PREDICATE, OBJECT, source)
+<<<<<<< HEAD
         '''
         idxPredicate = predicates.index(p)
         PREDICATE = p[0]
@@ -104,21 +120,32 @@ for o in oer:
         saveTriple(SUBJECT, subject_aux, PREDICATE, OBJECT, source)
     #Descargas
     '''
+=======
+    # Descargas
+    query = 'select od.name, od.url from oer_downloads od join oer o on od.oer_id = o.id where o.id ={}'.format(idOer)
+    myac.execute(query)
+    dowloadsLink = myac.fetchall()
+>>>>>>> c2e31550fb680944e4f6c3e5c88e581e64deae4a
     nroDownloads = len(dowloadsLink)
     if nroDownloads > 0:
-        obj_subj = 'download-{0}-{1}'.format(source.replace(' ',''),idOer)
-        saveTriple(SUBJECT,subject_aux,'downloads', obj_subj,source)
-    
-    for d in dowloadsLink:
-        #Falta un triple mas de download
-        subjectDownload = 'download-{}'.format(dowloadsLink.index(d))
-        saveTriple(obj_subj, '','has',subjectDownload,source)
+        obj_subj = 'download-{0}-{1}'.format(source.replace(' ', ''), idOer)
+        saveTriple(SUBJECT, subject_aux, 'downloads', obj_subj, source)
 
+    for d in dowloadsLink:
+        # Falta un triple mas de download
+        subjectDownload = 'download-{}'.format(dowloadsLink.index(d))
+        saveTriple(obj_subj, '', 'has', subjectDownload, source)
+
+<<<<<<< HEAD
         saveTriple(subjectDownload, '','name-download',d[0],source)
         saveTriple(subjectDownload, '','url-download',d[1],source)
     '''
+=======
+        saveTriple(subjectDownload, '', 'name-download', d[0], source)
+        saveTriple(subjectDownload, '', 'url-download', d[1], source)
+>>>>>>> c2e31550fb680944e4f6c3e5c88e581e64deae4a
 
-    print("{0} / {1}".format(oer.index(o),totalOer))
-print('Total OER procesados {0} de {1}'.format(totalOer,source))
+    print("{0} / {1}".format(oer.index(o), totalOer))
+print('Total OER procesados {0} de {1}'.format(totalOer, source))
 
 
