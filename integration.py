@@ -22,25 +22,19 @@ def saveTriple(s, sa, p, o, repository):
     if o == 'None' or o == '' or o == None:
         pass
     else:
-        sql = "INSERT INTO scrapydb.cleantriple(subject, subject_alternative, predicate, object,repository) VALUES(%s,%s,%s,%s,%s)"
+        sql = "INSERT INTO oerintegrationdb.cleantriple(subject, subject_alternative, predicate, object,repository) VALUES(%s,%s,%s,%s,%s)"
         values = (s, sa, p, o, repository)
         myac.execute(sql, values)
         mydb.commit()
 
 
-<<<<<<< HEAD
 #------------------- TO get Row from DB ---------------------
 #Los predicados son las columnas de la tabla OER
 myac.execute('desc merlot')
-=======
-# ------------------- TO get Row from DB ---------------------
-# Los predicados son las columnas de la tabla OER
-myac.execute('desc oer')
->>>>>>> c2e31550fb680944e4f6c3e5c88e581e64deae4a
 predicates = myac.fetchall()
 
 #query = 'select * from oer o join oer_pages op on o.pages_id = op.id where op.name = "{}";'.format(source)
-query = 'select * from merlot limit 100;'
+query = 'select * from merlot limit 3;'
 myac.execute(query)
 oer = myac.fetchall()
 totalOer = len(oer)
@@ -49,7 +43,6 @@ for o in oer:
     idOer = o[0]
     SUBJECT = o[2]
 
-<<<<<<< HEAD
     #Descargas
     '''
     query = 'select od.name, od.url from oer_downloads od join oer o on od.oer_id = o.id where o.id ={};'.format(idOer)
@@ -72,15 +65,6 @@ for o in oer:
         subject_aux = ''
     '''
 
-    saveTriple(SUBJECT,subject_aux,'repository_oer',source,source)
-=======
-    # Definiendo el sujeto
-    idOer = o[0]
-    SUBJECT = o[8]
-    subject_aux = '{0}-{1}'.format(source.replace(' ', ''), idOer)
-    saveTriple(SUBJECT, subject_aux, 'repository_oer', source, source)
->>>>>>> c2e31550fb680944e4f6c3e5c88e581e64deae4a
-
     
     # Valores de Llaves Foraneas
     # tabla Categoria de OER
@@ -97,10 +81,7 @@ for o in oer:
     objTypeOer = myac.fetchall()
     objTypeOer = objTypeOer[0][0]
     saveTriple(SUBJECT, subject_aux, 'type_oer', objTypeOer, source)
-<<<<<<< HEAD
     '''
-=======
->>>>>>> c2e31550fb680944e4f6c3e5c88e581e64deae4a
 
     for p in predicates:
         '''
@@ -112,20 +93,48 @@ for o in oer:
             PREDICATE = p[0]
             OBJECT = str(o[idxPredicate]).strip()
             saveTriple(SUBJECT, subject_aux, PREDICATE, OBJECT, source)
-<<<<<<< HEAD
         '''
         idxPredicate = predicates.index(p)
         PREDICATE = p[0]
         OBJECT = str(o[idxPredicate]).strip()
         saveTriple(SUBJECT, subject_aux, PREDICATE, OBJECT, source)
+
+    #MERLOT - Foreing Keys
+    query = f'select * from merlot_link_resource where merlot_id = {idOer} and url != "" limit 1;'
+    myac.execute(query)
+    merlotLinkResource = myac.fetchall()
+    for mlr in merlotLinkResource:
+        saveTriple(SUBJECT, subject_aux, 'url_external', mlr[1], source)
+        saveTriple(SUBJECT, subject_aux, 'url_external_status',mlr[2], source)
+
+    query = f'select * from merlot_info_meta where merlot_id = "{SUBJECT}";'
+    myac.execute(query)
+    metas = myac.fetchall()
+    for m in metas:
+        obj_subj = f'meta-{m[0]}'
+        saveTriple(SUBJECT,subject_aux,'hasInformationMeta',obj_subj,source)
+
+        saveTriple(obj_subj,subject_aux,'attr_name',m[1],source)
+        saveTriple(obj_subj, subject_aux, 'attr_name', m[2], source)
+        saveTriple(obj_subj, subject_aux, 'content', m[3], source)
+
+    query = f'select id, author,organization,email from merlot_author where material ="{SUBJECT}";'
+    myac.execute(query)
+    autores = myac.fetchall()
+    for a in autores:
+        obj_subj = f'author-{a[0]}'
+        saveTriple(SUBJECT, subject_aux, 'hasAutor', obj_subj, source)
+
+        saveTriple(obj_subj, subject_aux, 'name_author', a[1], source)
+        saveTriple(obj_subj, subject_aux, 'organization_author', a[2], source)
+        saveTriple(obj_subj, subject_aux, 'email_author', a[3], source)
+
     #Descargas
     '''
-=======
     # Descargas
     query = 'select od.name, od.url from oer_downloads od join oer o on od.oer_id = o.id where o.id ={}'.format(idOer)
     myac.execute(query)
     dowloadsLink = myac.fetchall()
->>>>>>> c2e31550fb680944e4f6c3e5c88e581e64deae4a
     nroDownloads = len(dowloadsLink)
     if nroDownloads > 0:
         obj_subj = 'download-{0}-{1}'.format(source.replace(' ', ''), idOer)
@@ -136,14 +145,9 @@ for o in oer:
         subjectDownload = 'download-{}'.format(dowloadsLink.index(d))
         saveTriple(obj_subj, '', 'has', subjectDownload, source)
 
-<<<<<<< HEAD
         saveTriple(subjectDownload, '','name-download',d[0],source)
         saveTriple(subjectDownload, '','url-download',d[1],source)
     '''
-=======
-        saveTriple(subjectDownload, '', 'name-download', d[0], source)
-        saveTriple(subjectDownload, '', 'url-download', d[1], source)
->>>>>>> c2e31550fb680944e4f6c3e5c88e581e64deae4a
 
     print("{0} / {1}".format(oer.index(o), totalOer))
 print('Total OER procesados {0} de {1}'.format(totalOer, source))
