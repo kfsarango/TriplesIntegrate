@@ -22,7 +22,7 @@ def saveTriple(s, sa, p, o, repository):
     if o == 'None' or o == '' or o == None:
         pass
     else:
-        sql = "INSERT INTO oerintegrationdb.cleantriple(subject, subject_alternative, predicate, object,repository) VALUES(%s,%s,%s,%s,%s)"
+        sql = "INSERT INTO cleantriple(subject, subject_alternative, predicate, object,repository) VALUES(%s,%s,%s,%s,%s)"
         values = (s, sa, p, o, repository)
         myac.execute(sql, values)
         mydb.commit()
@@ -34,7 +34,7 @@ myac.execute('desc merlot')
 predicates = myac.fetchall()
 
 #query = 'select * from oer o join oer_pages op on o.pages_id = op.id where op.name = "{}";'.format(source)
-query = 'select * from merlot limit 3;'
+query = 'select * from merlot;'
 myac.execute(query)
 oer = myac.fetchall()
 totalOer = len(oer)
@@ -107,7 +107,7 @@ for o in oer:
         saveTriple(SUBJECT, subject_aux, 'url_external', mlr[1], source)
         saveTriple(SUBJECT, subject_aux, 'url_external_status',mlr[2], source)
 
-    query = f'select * from merlot_info_meta where merlot_id = "{SUBJECT}";'
+    query = f'select * from merlot_info_meta where merlot_id = {idOer};'
     myac.execute(query)
     metas = myac.fetchall()
     for m in metas:
@@ -115,7 +115,7 @@ for o in oer:
         saveTriple(SUBJECT,subject_aux,'hasInformationMeta',obj_subj,source)
 
         saveTriple(obj_subj,subject_aux,'attr_name',m[1],source)
-        saveTriple(obj_subj, subject_aux, 'attr_name', m[2], source)
+        saveTriple(obj_subj, subject_aux, 'attr_value', m[2], source)
         saveTriple(obj_subj, subject_aux, 'content', m[3], source)
 
     query = f'select id, author,organization,email from merlot_author where material ="{SUBJECT}";'
@@ -125,9 +125,19 @@ for o in oer:
         obj_subj = f'author-{a[0]}'
         saveTriple(SUBJECT, subject_aux, 'hasAutor', obj_subj, source)
 
-        saveTriple(obj_subj, subject_aux, 'name_author', a[1], source)
-        saveTriple(obj_subj, subject_aux, 'organization_author', a[2], source)
-        saveTriple(obj_subj, subject_aux, 'email_author', a[3], source)
+        saveTriple(obj_subj, subject_aux, 'author_name', a[1], source)
+        saveTriple(obj_subj, subject_aux, 'author_organization', a[2], source)
+        saveTriple(obj_subj, subject_aux, 'author_email', a[3], source)
+
+    query = f'select id, category,category_link from merlot_category where material ="{SUBJECT}";'
+    myac.execute(query)
+    categories = myac.fetchall()
+    for c in categories:
+        obj_subj = f'category-{c[0]}'
+        saveTriple(SUBJECT, subject_aux, 'hasCategory', obj_subj, source)
+
+        saveTriple(obj_subj, subject_aux, 'category_name', c[1], source)
+        saveTriple(obj_subj, subject_aux, 'category_link', c[2], source)
 
     #Descargas
     '''
