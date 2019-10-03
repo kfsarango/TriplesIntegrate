@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf46b380-7dcf-4ef4-9a6f-c9e5273bf93d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/nlp/entityRecognitionTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nlp/extractNlp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nlp/testnlp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration.py" beforeDir="false" afterPath="$PROJECT_DIR$/integration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ogprocess.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requeriments.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requeriments.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,13 +15,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QzfdCFjalWnA4P35Mc9lG1OyX5" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../generic-spider" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -46,6 +57,16 @@
       <workItem from="1569081235361" duration="943000" />
       <workItem from="1569166543653" duration="812000" />
       <workItem from="1569190619470" duration="6319000" />
+      <workItem from="1569270656821" duration="89000" />
+      <workItem from="1569273115961" duration="29000" />
+      <workItem from="1569289445306" duration="4233000" />
+      <workItem from="1569330442001" duration="62000" />
+      <workItem from="1569344238846" duration="8829000" />
+      <workItem from="1569955093652" duration="949000" />
+      <workItem from="1570033212389" duration="5324000" />
+      <workItem from="1570051811394" duration="5818000" />
+      <workItem from="1570081248507" duration="3466000" />
+      <workItem from="1570108101520" duration="673000" />
     </task>
     <servers />
   </component>
