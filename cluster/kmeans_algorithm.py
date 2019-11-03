@@ -122,6 +122,7 @@ class Kmeans:
             self.cluster_labels = self.assign_clusters(data)
             self.centroids = self.update_centroids(data)          
             if iter % 100 == 0:
-                print("Running Model Iteration %d " %iter)
-        print("Model finished running")
+                pass
+                #print("Running Model Iteration %d " %iter)
+        #print("Model finished running")
         return self

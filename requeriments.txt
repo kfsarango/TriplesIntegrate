@@ -15,5 +15,6 @@ pandas
 numpy
 nltk
 Sqlalchemy
-
-
+scikit-learn
+matplotlib
+gensim

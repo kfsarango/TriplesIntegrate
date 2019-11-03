@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf46b380-7dcf-4ef4-9a6f-c9e5273bf93d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/nlp/entityRecognitionTest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nlp/extractNlp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nlp/testnlp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cs2013/contentAnalitycs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ogprocess.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster/cluster.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/cluster.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster/clusterNLPOER v3.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/clusterNLPOER v3.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster/kmeans_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/kmeans_algorithm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs2013/extractData.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/requeriments.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requeriments.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +29,13 @@
   <component name="ProjectId" id="1QzfdCFjalWnA4P35Mc9lG1OyX5" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../generic-spider" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Django/password-manager" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cluster" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -66,7 +72,20 @@
       <workItem from="1570033212389" duration="5324000" />
       <workItem from="1570051811394" duration="5818000" />
       <workItem from="1570081248507" duration="3466000" />
-      <workItem from="1570108101520" duration="673000" />
+      <workItem from="1570108101520" duration="1785000" />
+      <workItem from="1570121778923" duration="5863000" />
+      <workItem from="1570203537882" duration="6114000" />
+      <workItem from="1570223398255" duration="115000" />
+      <workItem from="1570423553452" duration="892000" />
+      <workItem from="1570479938983" duration="4535000" />
+      <workItem from="1570496648096" duration="1794000" />
+      <workItem from="1572271173813" duration="929000" />
+      <workItem from="1572277116081" duration="1649000" />
+      <workItem from="1572355332675" duration="23000" />
+      <workItem from="1572365771628" duration="802000" />
+      <workItem from="1572370530919" duration="288000" />
+      <workItem from="1572452152567" duration="1049000" />
+      <workItem from="1572760003189" duration="48000" />
     </task>
     <servers />
   </component>
