@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf46b380-7dcf-4ef4-9a6f-c9e5273bf93d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cs2013/contentAnalitycs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/toMetAOerDB.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/toMetaOer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TriplesIntegration.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TriplesIntegration.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cluster/cluster.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/cluster.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cluster/clusterNLPOER v3.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/clusterNLPOER v3.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cluster/kmeans_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/kmeans_algorithm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs2013/extractData.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requeriments.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requeriments.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integrationAndre.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrationAndre.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +28,13 @@
   <component name="ProjectId" id="1QzfdCFjalWnA4P35Mc9lG1OyX5" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Django/password-manager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -86,6 +91,7 @@
       <workItem from="1572370530919" duration="288000" />
       <workItem from="1572452152567" duration="1049000" />
       <workItem from="1572760003189" duration="48000" />
+      <workItem from="1578410534392" duration="7488000" />
     </task>
     <servers />
   </component>
