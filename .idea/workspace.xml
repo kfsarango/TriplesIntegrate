@@ -54,6 +54,35 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="toMetaOer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="TriplesIntegration" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/toMetaOer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.toMetaOer" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -91,7 +120,8 @@
       <workItem from="1572370530919" duration="288000" />
       <workItem from="1572452152567" duration="1049000" />
       <workItem from="1572760003189" duration="48000" />
-      <workItem from="1578410534392" duration="7488000" />
+      <workItem from="1578410534392" duration="7533000" />
+      <workItem from="1578437574549" duration="9635000" />
     </task>
     <servers />
   </component>
@@ -110,5 +140,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TriplesIntegrate$toMetaOer.coverage" NAME="toMetaOer Coverage Results" MODIFIED="1578444231113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

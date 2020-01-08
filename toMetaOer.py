@@ -31,7 +31,7 @@ def saveRepository(name):
     dataDb.commit()
 
 repositories = [
-    {'id':10,'r':'Open Culture','s':'repository_oer'},
+    {'id':10,'r':'OpenCulture','s':'repository_oer'},
     {'id':11,'r':'Galileo Open','s':'url_native'},
     {'id':1,'r':'OER Commons','s':'repository_oer'},
     {'id':2,'r':'Merlot','s':'id'},
@@ -48,16 +48,45 @@ def getIndexOfRespositories(dataList,separador):
     newList = []
     for idx, data in enumerate(dataList):
         if data[2] == separador:
-            newList.append(data)
-for r in repositories[:2]:
+            newList.append({'data':data,'idx':idx})
+    return newList
+
+contIdentifier = 3395
+for r in repositories[2:4]:
     repository = r['r']
     #consultando todas las tripletas de repository
     query = f"SELECT * FROM scrapydb.cleantriple where repository = '{repository}';"
     mydb.execute(query)
     allDataRepository = mydb.fetchall()
-    for adr in allDataRepository:
-        subject = adr[0]
-        alt_subject = adr[1]
-        predicate = adr[2]
-        object = adr[3]
-        if predicate == r['s']:
+    dataIndices = getIndexOfRespositories(allDataRepository,r['s'])
+    ledDataInx = len(dataIndices)
+    for idx, di in enumerate(dataIndices):
+        identifier = di['data'][0]
+        # insert identifier
+        saveIdentifier(identifier,'',r['id'])
+
+        startIdx = di['idx']
+        try:
+            endIdx = dataIndices[idx + 1]['idx']
+            # recorriendo triples
+            for triple in allDataRepository[startIdx:endIdx]:
+                tSubject = triple[0]
+                if identifier == tSubject:
+                    tSubject = str(contIdentifier)
+                tPredicate = triple[2]
+                tObject = triple[3]
+                saveTriple(tSubject,tPredicate,tObject,contIdentifier)
+
+        except Exception as ex:
+            print('Execption')
+            print(ex)
+            for triple in allDataRepository[startIdx:]:
+                tSubject = triple[0]
+                if identifier == tSubject:
+                    tSubject = str(contIdentifier)
+                tPredicate = triple[2]
+                tObject = triple[3]
+                saveTriple(tSubject, tPredicate, tObject, contIdentifier)
+                print(f'saved triple: identifier{contIdentifier}')
+        print(f'{repository}: {idx}/{ledDataInx}')
+        contIdentifier+=1
