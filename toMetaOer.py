@@ -4,7 +4,7 @@ import mysql.connector
 dataDb = mysql.connector.connect(
     host="localhost",
     user="root",
-    passwd="",
+    passwd="root",
     database="metaoerdb"
 )
 
@@ -51,14 +51,15 @@ def getIndexOfRespositories(dataList,separador):
             newList.append({'data':data,'idx':idx})
     return newList
 
-contIdentifier = 3395
-for r in repositories[2:4]:
+contIdentifier = 72
+for r in repositories[1:2]:
     repository = r['r']
     #consultando todas las tripletas de repository
-    query = f"SELECT * FROM scrapydb.cleantriple where repository = '{repository}';"
+    query = f"SELECT * FROM oerintegrationdb.cleantriple where repository = '{repository}';"
     mydb.execute(query)
     allDataRepository = mydb.fetchall()
     dataIndices = getIndexOfRespositories(allDataRepository,r['s'])
+    dataIndices = dataIndices[:40]
     ledDataInx = len(dataIndices)
     for idx, di in enumerate(dataIndices):
         identifier = di['data'][0]

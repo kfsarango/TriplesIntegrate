@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf46b380-7dcf-4ef4-9a6f-c9e5273bf93d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/toMetAOerDB.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/toMetaOer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/getTriples.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/TriplesIntegration.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TriplesIntegration.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integrationAndre.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrationAndre.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toMetaOer.py" beforeDir="false" afterPath="$PROJECT_DIR$/toMetaOer.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +24,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QzfdCFjalWnA4P35Mc9lG1OyX5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -42,19 +46,51 @@
       <recent name="$PROJECT_DIR$/cluster" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.getTriples">
+    <configuration name="getTriples" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TriplesIntegration" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/getTriples.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="testCsv" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TriplesIntegration" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testCsv.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="toMetaOer" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="TriplesIntegration" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -79,9 +115,23 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.getTriples" />
+        <item itemvalue="Python.testCsv" />
         <item itemvalue="Python.toMetaOer" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -122,6 +172,8 @@
       <workItem from="1572760003189" duration="48000" />
       <workItem from="1578410534392" duration="7533000" />
       <workItem from="1578437574549" duration="9635000" />
+      <workItem from="1578547359439" duration="4419000" />
+      <workItem from="1578582478472" duration="5483000" />
     </task>
     <servers />
   </component>
@@ -141,7 +193,51 @@
       </map>
     </option>
   </component>
+  <component name="WindowStateProjectService">
+    <state width="1284" height="232" key="GridCell.Tab.0.bottom" timestamp="1578587855142">
+      <screen x="40" y="0" width="1326" height="768" />
+    </state>
+    <state width="1284" height="232" key="GridCell.Tab.0.bottom/40.0.1326.768@40.0.1326.768" timestamp="1578587855142" />
+    <state width="1284" height="232" key="GridCell.Tab.0.center" timestamp="1578587855142">
+      <screen x="40" y="0" width="1326" height="768" />
+    </state>
+    <state width="1284" height="232" key="GridCell.Tab.0.center/40.0.1326.768@40.0.1326.768" timestamp="1578587855142" />
+    <state width="1284" height="232" key="GridCell.Tab.0.left" timestamp="1578587855142">
+      <screen x="40" y="0" width="1326" height="768" />
+    </state>
+    <state width="1284" height="232" key="GridCell.Tab.0.left/40.0.1326.768@40.0.1326.768" timestamp="1578587855142" />
+    <state width="1284" height="232" key="GridCell.Tab.0.right" timestamp="1578587855142">
+      <screen x="40" y="0" width="1326" height="768" />
+    </state>
+    <state width="1284" height="232" key="GridCell.Tab.0.right/40.0.1326.768@40.0.1326.768" timestamp="1578587855142" />
+    <state width="1284" height="232" key="GridCell.Tab.1.bottom" timestamp="1578587855712">
+      <screen x="40" y="0" width="1326" height="768" />
+    </state>
+    <state width="1284" height="232" key="GridCell.Tab.1.bottom/40.0.1326.768@40.0.1326.768" timestamp="1578587855712" />
+    <state width="1284" height="232" key="GridCell.Tab.1.center" timestamp="1578587855712">
+      <screen x="40" y="0" width="1326" height="768" />
+    </state>
+    <state width="1284" height="232" key="GridCell.Tab.1.center/40.0.1326.768@40.0.1326.768" timestamp="1578587855712" />
+    <state width="1284" height="232" key="GridCell.Tab.1.left" timestamp="1578587855712">
+      <screen x="40" y="0" width="1326" height="768" />
+    </state>
+    <state width="1284" height="232" key="GridCell.Tab.1.left/40.0.1326.768@40.0.1326.768" timestamp="1578587855712" />
+    <state width="1284" height="232" key="GridCell.Tab.1.right" timestamp="1578587855712">
+      <screen x="40" y="0" width="1326" height="768" />
+    </state>
+    <state width="1284" height="232" key="GridCell.Tab.1.right/40.0.1326.768@40.0.1326.768" timestamp="1578587855712" />
+    <state x="207" y="18" key="SettingsEditor" timestamp="1578547977639">
+      <screen x="40" y="0" width="1326" height="768" />
+    </state>
+    <state x="207" y="18" key="SettingsEditor/40.0.1326.768@40.0.1326.768" timestamp="1578547977639" />
+    <state width="663" height="384" key="XDebugger.FullValuePopup" timestamp="1578588075738">
+      <screen x="40" y="0" width="1326" height="768" />
+    </state>
+    <state width="663" height="384" key="XDebugger.FullValuePopup/40.0.1326.768@40.0.1326.768" timestamp="1578588075738" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/TriplesIntegrate$toMetaOer.coverage" NAME="toMetaOer Coverage Results" MODIFIED="1578444231113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TriplesIntegrate$getTriples.coverage" NAME="getTriples Coverage Results" MODIFIED="1578587854907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TriplesIntegrate$toMetaOer.coverage" NAME="toMetaOer Coverage Results" MODIFIED="1578551674885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TriplesIntegrate$testCsv.coverage" NAME="testCsv Coverage Results" MODIFIED="1578582565651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
